@@ -1,0 +1,65 @@
+img {
+    height: 150px;
+    width: 150px;
+    padding-top: 20px;
+}
+
+.card {
+    align-items: center;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    background: linear-gradient(to right, #EFF3FB, #DDE5F3);
+    transition: all 0.5s ease;
+    cursor: pointer;
+    user-select: none;
+    z-index: 10;
+    overflow: hidden;
+    position: relative; /* Added to ensure background effect stays behind content */
+}
+
+.card .backgroundEffect {
+    bottom: 0;
+    height: 0px;
+    width: 100%;
+}
+
+.card:hover {
+    transform: scale(1.025);
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 5px 10px;
+}
+
+.card:hover .backgroundEffect {
+    bottom: 0;
+    height: 320px;
+    width: 100%;
+    position: absolute;
+    z-index: -1;
+    background: #1b9ce3;
+    animation: popBackground 0.3s ease-in;
+}
+
+.card-title {
+    text-align: center;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+div {
+    padding-right: 15px;
+    padding-left: 15px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+h5 {
+    text-align: center;
+}
+
+/* Optional: Add a keyframes animation for the background effect */
+@keyframes popBackground {
+    from {
+        height: 0px;
+    }
+    to {
+        height: 320px;
+    }
+}
